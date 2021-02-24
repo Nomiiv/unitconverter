@@ -14,32 +14,38 @@
   </head>
   <body>
     <header>
-      <h1>Enhets omvandlare</h1>
+      <h1>Unit converter</h1>
     </header>
-    <div class="styleInput">
+    <div class="theme">
+      <input type="image" src="./img/welcomeToBlackSpace.png" class="btnW-toggle">
+      <input type="image" src="./img/welcomeToWhiteSpace.png" class="btnB-toggle invisible ">
+      <p class="welcome-b">welcome to black space</p>
+      <p class="welcome-w invisible">welcome to white space</p>
+    </div>
+    <div class="content">
       <input type="text" placeholder="input" id="input" autocomplete="off" />
+      <div class="selector">
+        <p>from</p>
       <select id="inputType">
         <option value="Centimeter">centimeter</option>
         <option value="meter">meter</option>
         <option value="kilometer">kilometer</option>
       </select>
-    </div>
-    <div class="styleResult">
+      <p>to</p>
+      <select id="resultType">
+        <option value="inch">inch</option>
+        <option value="feet">feet</option>
+        <option value="yard">yard</option>
+      </select>
+      </div>
       <section id="app-root">
         <form data-list-form>
           <input
             type="text"
             id="result"
-            placeholder="output"
-            autocomplete="off"
             data-list-input
           />
-          <select id="resultType">
-            <option value="inch">inch</option>
-            <option value="feet">feet</option>
-            <option value="yard">yard</option>
-          </select>
-          <button>lägg till i historik</button>
+          <button>+</button>
           <div id="list-root">
             <!-- Allt här i genereras av Javascript -->
           </div>

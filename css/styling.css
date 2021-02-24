@@ -1,10 +1,205 @@
-body {
-  margin: 0px;
-  padding: 0px;
+
+:root {
+  --orange: #fba526;
+  --light-gray: #1e1e1e;
+  --dark-gray: #121212;
+  --blue: #1565c0;
+  --highlight: #1e323a;
+  --red: #e53935;
   font-family: Arial, Helvetica, sans-serif;
-}
-header {
-  background-color: rgb(163, 163, 163);
-  margin: 0px;
+  --light: #ededed;
+  --dark: #e1e1e1;
+  --pink: #e1cdc5;
 }
 
+body {
+  margin: 0px; ;
+  background-color: var(--dark-gray);
+  transition: all 0.7s ease 0s;
+  color: var(--light);
+}
+
+body.light-theme{
+  background-color: var(--light);
+}
+
+header {
+  transition: all 0.5s ease 0s;
+  background-color: var(--blue);
+  font-size: 1em;
+  color: white;
+  display: flex;
+  padding-left: 10vw;
+  -webkit-box-shadow: -2px 3px 5px 3px rgba(0,0,0,0.1); 
+  box-shadow: -2px 3px 5px 3px rgba(0,0,0,0.1);
+}
+
+body.light-theme header {
+  background-color: var(--orange);
+}
+.theme p {
+  padding-left: 16px;
+}
+.content{
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 16px;
+  padding-bottom: 5rem;
+  border-radius: 8px;
+  background-color: var(--light-gray);
+  -webkit-box-shadow: -2px 3px 5px 3px rgba(0,0,0,0.1); 
+  box-shadow: -2px 3px 5px 3px rgba(0,0,0,0.1);
+}
+body.light-theme .content {
+  background-color: var(--dark);
+}
+#result {
+  display: none;
+}
+#list-root {
+  color: var(--orange);
+  margin-right: 80%;
+  font-size: 1.2rem;
+}
+body.light-theme #list-root {
+  color: black;
+  margin-right: 80%;
+}
+#list-root ul li {
+  transition: all 0.4s ease 0s;
+  text-decoration: none;
+  background-color: var(--highlight);
+  text-decoration-color: black;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 16px;
+  padding-right: 40vw;
+  list-style: none;
+}
+body.light-theme #list-root ul li {
+  background-color: var(--pink);
+}
+#list-root ul li:hover {
+  background-color: var(--red);
+  text-decoration: line-through;
+  text-decoration-color: black;
+  text-decoration-thickness: 3px;
+}
+body.light-theme #list-root ul li:hover {
+  background-color: var(--red);
+
+  opacity: 80%;
+}
+.content input {
+  transition: all 0.4s ease 0s;
+  color: white;
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid white;
+  margin: 20px;
+  margin-bottom: 50px;
+  font-size: 1.5rem;
+}
+body.light-theme .content input {
+  border-bottom: 3px solid var(--dark-gray);
+  color: var(--dark-gray);
+}
+input[type="image"]{
+  outline: none;
+  max-width: 10vw;
+  min-width: 100px;
+}
+input[type="text"]:focus {
+  outline: none;
+  border-bottom: 3px solid var(--blue);
+}
+body.light-theme input[type="text"]:focus {
+  outline: none;
+  border-bottom: 3px solid var(--orange);
+}
+select {
+  padding: 16px;
+  border-radius: 8px;
+  border-width: 3px;
+  color: white;
+  background-color: transparent;
+  font-size: 1.2rem;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+option {
+  background-color: var(--highlight);
+}
+body.light-theme option {
+  background-color: var(--pink);
+}
+body.light-theme select {
+  color: var(--dark-gray);
+}
+body.light-theme p {
+  color: var(--dark-gray);
+}
+.selector {
+  display: flex;
+  color: white;
+}
+.selector p {
+  font-size: 1.5rem;
+}
+select:focus {
+  outline: none;
+}
+button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  transition: all 0.2s ease 0s;
+  font-weight: 500;
+  font-size: 5rem;
+  text-decoration: none;
+}
+body.light-theme button {
+  transition: all 0.2s ease 0s;
+  color: var(--dark-gray);
+}
+body.light-theme button:hover {
+  color: var(--orange);
+}
+button:hover {
+  color: var(--orange);
+}
+body.light-theme button:hover {
+  color: var(--blue);
+}
+button:focus {
+  outline: none;
+}
+.invisible {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+.content {
+  margin-left: 2%;
+  margin-top: 5%;
+  margin-right: 2%;
+  padding: 5%;
+  }
+  #list-root ul li {
+    padding-right: 60vw;
+  }
+}
+@media screen and (max-width: 650px) {
+  select {
+    padding: 0px;
+    border-radius: 8px;
+    border-width: 3px;
+    font-size: 1rem;
+  }
+  .selector {
+    font-size: 1rem;
+  }
+  .content input {
+    font-size: 1rem;
+  }
+}

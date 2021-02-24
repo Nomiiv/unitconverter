@@ -54,9 +54,19 @@ listForm.addEventListener("submit", (e) => {
 	if (listInput.value.trim() === "") {
 	  return;
 	}
+	if (listInput.value.trim() === "NaN") {
+		document.getElementById("input").value = "";
+		return;
+	}
+	if (listInput.value.trim() === "0") {
+		document.getElementById("input").value = "";
+		return;
+	}
 	todos.push(createTodo(listInput.value.trim()));
 	updateList();
 	listInput.value = "";
+	listInput.value = "NaN";
+	listInput.value = "0";
 	document.getElementById("input").value = "";
 });
 
@@ -97,3 +107,23 @@ function saveList() {
   }
 
 updateList();
+
+const btnW = document.querySelector(".btnW-toggle");
+btnW.addEventListener("click", function () {
+  document.querySelector(".btnW-toggle").classList.toggle("invisible");
+  document.querySelector(".btnB-toggle").classList.toggle("invisible");
+  document.querySelector(".welcome-w").classList.toggle("invisible");
+  document.querySelector(".welcome-b").classList.toggle("invisible");
+  document.body.classList.toggle("light-theme");
+});
+const btnB = document.querySelector(".btnB-toggle");
+btnB.addEventListener("click", function () {
+  document.querySelector(".btnW-toggle").classList.toggle("invisible");
+  document.querySelector(".btnB-toggle").classList.toggle("invisible");
+  document.querySelector(".welcome-w").classList.toggle("invisible");
+  document.querySelector(".welcome-b").classList.toggle("invisible");
+  document.body.classList.toggle("light-theme");
+});
+
+  
+  
