@@ -29,7 +29,7 @@ function convert() {
 		result.value = Number(input.value) * 39370.1;
 	}else if(inputTypeValue === "kilometer" && resultTypeValue==="feet"){
 		result.value = Number(input.value) * 3280.8;
-	}else if(inputTypeValue === "kilometre" && resultTypeValue==="yard"){
+	}else if(inputTypeValue === "kilometer" && resultTypeValue==="yard"){
 		result.value = Number(input.value) * 1093.6;
 	}
 
